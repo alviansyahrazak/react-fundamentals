@@ -6,27 +6,20 @@ import { Search } from '../components/Search';
 
 export const Homepage = () => {
   const [posts, setPosts] = useState(postsData);
-  const [searchValue, setSearchValue] = useState('');
+  const [totalPosts, setTotalPosts] = useState(0);
 
   const onSearchChange = (value) => {
-    setSearchValue(value);
-    console.log(value);
     const filteredPosts = postsData.filter((item) =>
       item.title.toLowerCase().includes(value.toLowerCase()),
     );
     setPosts(filteredPosts);
+    setTotalPosts(filteredPosts.length);
   };
 
   return (
     <>
       <h1>Simple Blog</h1>
-      <Search onSearch={onSearchChange} />
-      <div>
-        <small>
-          Ditemukan {posts.length} data dengan pencarian kata : {searchValue}
-          {posts.length === 0 ? 'tidak ditemukan' : ''}
-        </small>
-      </div>
+      <Search onSearchChange={onSearchChange} totalPosts={totalPosts} />
       {posts.map(({ title, tags, date }, index) => (
         <Article {...{ title, tags, date }} key={index} />
       ))}
