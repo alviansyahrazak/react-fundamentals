@@ -20,8 +20,8 @@ export const Homepage = () => {
     <>
       <h1>Simple Blog</h1>
       <Search onSearchChange={onSearchChange} totalPosts={totalPosts} />
-      {posts.map(({ title, tags, date }, index) => (
-        <Article {...{ title, tags, date }} key={index} />
+      {posts.map(({ title, tags, date, isNew }, index) => (
+        <Article {...{ title, tags, date, isNew }} key={index} />
       ))}
     </>
   );
