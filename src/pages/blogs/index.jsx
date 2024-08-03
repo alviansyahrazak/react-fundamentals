@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Search } from '../../components/Search';
 
 export const Blog = () => {
@@ -30,7 +31,9 @@ export const Blog = () => {
       <Search onSearchClick={onSearchClick} totalPosts={totalPosts} />
       {posts.map((item) => (
         <div key={item.id}>
-         <div>{item.id} - {item.title}</div>
+          <Link to={`/blog/${item.id}`}>
+            {item.id} - {item.title}
+          </Link>
         </div>
       ))}
     </>

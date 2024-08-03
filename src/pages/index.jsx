@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import postsData from '../posts.json';
 import { Article } from '../components/Article';
 import { Search } from '../components/Search';
