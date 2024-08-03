@@ -8,7 +8,7 @@ export const Homepage = () => {
   const [posts, setPosts] = useState(postsData);
   const [totalPosts, setTotalPosts] = useState(0);
 
-  const onSearchChange = (value) => {
+  const onSearchClick = (value) => {
     const filteredPosts = postsData.filter((item) =>
       item.title.toLowerCase().includes(value.toLowerCase()),
     );
@@ -19,7 +19,7 @@ export const Homepage = () => {
   return (
     <>
       <h1>Simple Blog</h1>
-      <Search onSearchChange={onSearchChange} totalPosts={totalPosts} />
+      <Search onSearchClick={onSearchClick} totalPosts={totalPosts} />
       {posts.map(({ title, tags, date, isNew }, index) => (
         <Article {...{ title, tags, date, isNew }} key={index} />
       ))}
