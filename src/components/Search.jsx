@@ -13,7 +13,7 @@ export const Search = (props) => {
 
   const onKeyDown = (e) => {
     if (e.key === 'Enter') {
-      props.onSearchClick(search);
+      onSearchClick();
     }
   };
 
@@ -30,7 +30,7 @@ export const Search = (props) => {
         <button onClick={onSearchClick}>Search</button>
       </div>
       <small>
-        Ditemukan {props.totalPosts} data dengan pencarian kata : {search}
+        Ditemukan {props.totalPosts} data dengan pencarian kata : "{search}"
       </small>
     </>
   );
