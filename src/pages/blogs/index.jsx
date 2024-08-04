@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from '../../components/Search';
 import { useLoaderData } from 'react-router-dom';
